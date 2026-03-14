@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/saras/Workspace/bookease/src -type f \\\\\\(-name *.ts -o -name *.tsx -o -name *.js -o -name *.jsx \\\\\\))",
+      "Bash(ls \"/c/Users/saras/Workspace/bookease/src/app/\\(onboarding\\)/merchant/onboarding/\")"
+    ]
+  }
+}
