@@ -6,6 +6,12 @@
   :root {
     --radius: 0.75rem;
     --font-sans: 'Noto Sans Thai', 'Inter', system-ui, sans-serif;
+
+    /* BookEase brand tokens */
+    --color-navy:   26 47 110;   /* #1a2f6e – "Book" */
+    --color-cyan:   0 184 230;   /* #00b8e6 – "Ease" */
+    --color-navy-light: 29 55 136;
+    --color-cyan-light: 34 208 248;
   }
 
   body {

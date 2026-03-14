@@ -4,7 +4,14 @@
       "Bash(find /c/Users/saras/Workspace/bookease/src -type f \\\\\\(-name *.ts -o -name *.tsx -o -name *.js -o -name *.jsx \\\\\\))",
       "Bash(ls \"/c/Users/saras/Workspace/bookease/src/app/\\(onboarding\\)/merchant/onboarding/\")",
       "Bash(npx tsc:*)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "Bash(npm show:*)",
+      "Bash(node -e \"const v=JSON.parse\\(require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\)\\); const v15=v.filter\\(x=>x.startsWith\\(''''15.''''\\)\\).slice\\(-5\\); console.log\\(v15.join\\(''''\\\\n''''\\)\\)\")",
+      "Bash(npm install:*)",
+      "Bash(npm audit:*)",
+      "Bash(node -e \"const d=JSON.parse\\(require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\)\\); Object.values\\(d.vulnerabilities||{}\\).filter\\(v=>v.severity===''''critical''''\\).forEach\\(v=>console.log\\(v.name, v.via?.map?.\\(x=>typeof x===''''string''''?x:x.title\\).join\\('''', ''''\\)\\)\\)\")",
+      "Bash(ls src/app/\\\\\\(merchant\\\\\\)/merchant/)",
+      "Bash(ls \"src/app/\\(merchant\\)/merchant/\")"
     ]
   }
 }

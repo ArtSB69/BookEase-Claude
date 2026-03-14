@@ -91,10 +91,13 @@ export default function LoginPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600">
-              <span className="text-lg font-bold text-white">B</span>
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy-800">
+              <span className="text-lg font-bold text-cyan-400">B</span>
             </div>
-            <span className="text-xl font-bold text-gray-900">{APP_NAME}</span>
+            <span className="text-xl font-bold">
+              <span className="text-navy-800">Book</span>
+              <span className="text-cyan-500">Ease</span>
+            </span>
           </Link>
           <h1 className="mt-6 text-2xl font-bold text-gray-900">เข้าสู่ระบบ</h1>
           <p className="mt-1 text-sm text-gray-500">สำหรับเจ้าของร้านและพนักงาน</p>

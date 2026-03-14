@@ -34,10 +34,13 @@ export function MerchantNav() {
       {/* Desktop sidebar */}
       <aside className="hidden lg:flex lg:w-60 lg:flex-col lg:fixed lg:inset-y-0 lg:z-30 lg:border-r lg:border-gray-100 lg:bg-white">
         <div className="flex h-16 items-center gap-2 border-b border-gray-100 px-5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600">
-            <span className="text-sm font-bold text-white">B</span>
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-navy-800">
+            <span className="text-sm font-bold text-cyan-400">B</span>
           </div>
-          <span className="text-lg font-bold text-gray-900">{APP_NAME}</span>
+          <span className="text-lg font-bold">
+            <span className="text-navy-800">Book</span>
+            <span className="text-cyan-500">Ease</span>
+          </span>
         </div>
         <nav className="flex flex-1 flex-col gap-1 p-3 pt-4">
           {navItems.map(({ href, label, icon: Icon }) => (
@@ -47,7 +50,7 @@ export function MerchantNav() {
               className={cn(
                 "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
                 pathname === href || pathname.startsWith(href + "/")
-                  ? "bg-brand-50 text-brand-700"
+                  ? "bg-navy-50 text-navy-800"
                   : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
               )}
             >
@@ -70,10 +73,13 @@ export function MerchantNav() {
       {/* Mobile top nav */}
       <header className="lg:hidden sticky top-0 z-40 flex h-16 items-center justify-between border-b border-gray-100 bg-white px-4">
         <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600">
-            <span className="text-sm font-bold text-white">B</span>
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-navy-800">
+            <span className="text-sm font-bold text-cyan-400">B</span>
           </div>
-          <span className="text-lg font-bold text-gray-900">{APP_NAME}</span>
+          <span className="text-lg font-bold">
+            <span className="text-navy-800">Book</span>
+            <span className="text-cyan-500">Ease</span>
+          </span>
         </div>
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -95,7 +101,7 @@ export function MerchantNav() {
                 className={cn(
                   "flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium transition-colors",
                   pathname === href
-                    ? "bg-brand-50 text-brand-700"
+                    ? "bg-navy-50 text-navy-800"
                     : "text-gray-600 hover:bg-gray-50"
                 )}
               >
@@ -131,7 +137,7 @@ export function MobileBottomNav() {
           className={cn(
             "flex flex-1 flex-col items-center gap-1 py-3 text-xs font-medium transition-colors",
             pathname === href || pathname.startsWith(href + "/")
-              ? "text-brand-600"
+              ? "text-navy-800"
               : "text-gray-500"
           )}
         >

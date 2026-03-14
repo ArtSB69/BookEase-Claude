@@ -206,10 +206,13 @@ export default function HomePage() {
       <footer className="border-t border-gray-100 bg-white py-8">
         <div className="mx-auto max-w-5xl px-4 text-center">
           <div className="flex items-center justify-center gap-2 mb-3">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-600">
-              <span className="text-xs font-bold text-white">B</span>
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-navy-800">
+              <span className="text-xs font-bold text-cyan-400">B</span>
             </div>
-            <span className="font-bold text-gray-900">BookEase</span>
+            <span className="font-bold">
+              <span className="text-navy-800">Book</span>
+              <span className="text-cyan-500">Ease</span>
+            </span>
           </div>
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} BookEase by Atiz · ระบบรับจองสำหรับธุรกิจบริการในไทย

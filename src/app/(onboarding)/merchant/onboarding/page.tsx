@@ -218,10 +218,13 @@ export default function OnboardingPage() {
               </button>
             )}
             <div className="flex items-center gap-2">
-              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-brand-600">
-                <span className="text-xs font-bold text-white">B</span>
+              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-navy-800">
+                <span className="text-xs font-bold text-cyan-400">B</span>
               </div>
-              <span className="text-sm font-bold text-gray-900">{APP_NAME}</span>
+              <span className="text-sm font-bold">
+                <span className="text-navy-800">Book</span>
+                <span className="text-cyan-500">Ease</span>
+              </span>
             </div>
           </div>
 
