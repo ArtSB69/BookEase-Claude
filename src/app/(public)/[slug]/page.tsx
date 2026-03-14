@@ -17,11 +17,8 @@ import { formatThaiCurrency, formatDuration, getBusinessTypeLabel } from "@/lib/
 import type { Metadata } from "next";
 import { StorefrontClient } from "./StorefrontClient";
 
-interface Props {
-  params: { slug: string };
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: any): Promise<Metadata> {
+  const { params } = props as { params: { slug: string } };
   const merchant = await prisma.merchant.findUnique({ where: { slug: params.slug } });
   if (!merchant) return { title: "ไม่พบร้าน" };
   return {
@@ -30,7 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function StorefrontPage({ params }: Props) {
+export default async function StorefrontPage(props: any) {
+  const { params } = props as { params: { slug: string } };
   const merchant = await prisma.merchant.findUnique({
     where: { slug: params.slug, isPublished: true },
     include: {

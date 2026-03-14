@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, ctx: any) {
+  const { params } = ctx as { params: { id: string } };
   try {
     const body = await req.json();
     const { status, note, paymentStatus } = body;
@@ -22,7 +23,8 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   }
 }
 
-export async function GET(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(_req: NextRequest, ctx: any) {
+  const { params } = ctx as { params: { id: string } };
   const booking = await prisma.booking.findUnique({
     where: { id: params.id },
     include: { service: true, customer: true, merchant: true },

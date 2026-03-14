@@ -5,19 +5,24 @@ import { BookingsClient } from "./BookingsClient";
 
 export const metadata = { title: "การจอง" };
 
-export default async function BookingsPage({
-  searchParams,
-}: {
-  searchParams: { date?: string; status?: string };
-}) {
+type Props = {
+  searchParams: Promise<{
+    date?: string;
+    status?: string;
+  }>;
+};
+
+export default async function BookingsPage({ searchParams }: Props) {
+  const params = await searchParams;
+
   const session = await auth();
   if (!session?.user) redirect("/auth/login");
 
   const user = await prisma.user.findUnique({ where: { id: session.user.id } });
   if (!user?.merchantId) redirect("/merchant/onboarding");
 
-  const dateStr = searchParams.date ?? new Date().toISOString().split("T")[0];
-  const statusFilter = searchParams.status;
+  const dateStr = params.date ?? new Date().toISOString().split("T")[0];
+  const statusFilter = params.status;
 
   const date = new Date(dateStr);
   date.setHours(0, 0, 0, 0);
@@ -32,5 +37,11 @@ export default async function BookingsPage({
     orderBy: { startTime: "asc" },
   });
 
-  return <BookingsClient bookings={bookings as never} initialDate={dateStr} merchantId={user.merchantId} />;
+  return (
+    <BookingsClient
+      bookings={bookings as never}
+      initialDate={dateStr}
+      merchantId={user.merchantId}
+    />
+  );
 }

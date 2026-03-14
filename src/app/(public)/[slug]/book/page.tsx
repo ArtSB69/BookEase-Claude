@@ -3,14 +3,13 @@ import { prisma } from "@/lib/prisma";
 import type { Metadata } from "next";
 import { BookingFlowClient } from "./BookingFlowClient";
 
-interface Props {
-  params: { slug: string };
-  searchParams: { serviceId?: string };
-}
-
 export const metadata: Metadata = { title: "จองบริการ" };
 
-export default async function BookPage({ params, searchParams }: Props) {
+export default async function BookPage(props: any) {
+  const { params, searchParams } = props as {
+    params: { slug: string };
+    searchParams: { serviceId?: string };
+  };
   const merchant = await prisma.merchant.findUnique({
     where: { slug: params.slug, isPublished: true },
     include: {

@@ -8,12 +8,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "จองสำเร็จ" };
 
-interface Props {
-  params: { slug: string };
-  searchParams: { bookingId?: string };
-}
-
-export default async function SuccessPage({ params, searchParams }: Props) {
+export default async function SuccessPage(props: any) {
+  const { params, searchParams } = props as {
+    params: { slug: string };
+    searchParams: { bookingId?: string };
+  };
   if (!searchParams.bookingId) notFound();
 
   const booking = await prisma.booking.findUnique({
