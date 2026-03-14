@@ -11,10 +11,11 @@ import type { BookingWithServiceAndCustomer } from "@/types";
 interface Props {
   bookings: BookingWithServiceAndCustomer[];
   initialDate: string;
+  initialStatus?: string;
   merchantId: string;
 }
 
-export function BookingsClient({ bookings: initialBookings, initialDate, merchantId }: Props) {
+export function BookingsClient({ bookings: initialBookings, initialDate, initialStatus, merchantId }: Props) {
   const router = useRouter();
   const [bookings, setBookings] = useState(initialBookings);
   const [currentDate, setCurrentDate] = useState(initialDate);

@@ -18,7 +18,9 @@ export default async function BookingsPage({ searchParams }: Props) {
   const session = await auth();
   if (!session?.user) redirect("/auth/login");
 
-  const user = await prisma.user.findUnique({ where: { id: session.user.id } });
+  const user = await prisma.user.findUnique({
+    where: { id: session.user.id },
+  });
   if (!user?.merchantId) redirect("/merchant/onboarding");
 
   const dateStr = params.date ?? new Date().toISOString().split("T")[0];
@@ -31,16 +33,22 @@ export default async function BookingsPage({ searchParams }: Props) {
     where: {
       merchantId: user.merchantId,
       bookingDate: date,
-      ...(statusFilter && { status: statusFilter as never }),
+      ...(statusFilter ? { status: statusFilter as never } : {}),
     },
-    include: { service: true, customer: true },
-    orderBy: { startTime: "asc" },
+    include: {
+      service: true,
+      customer: true,
+    },
+    orderBy: {
+      startTime: "asc",
+    },
   });
 
   return (
     <BookingsClient
       bookings={bookings as never}
       initialDate={dateStr}
+      initialStatus={statusFilter}
       merchantId={user.merchantId}
     />
   );
