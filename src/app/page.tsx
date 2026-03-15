@@ -70,38 +70,40 @@ export default function HomePage() {
       <PublicNav />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-600 via-brand-700 to-indigo-800 py-20 md:py-28">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=60 height=60 viewBox=0 0 60 60 xmlns=http://www.w3.org/2000/svg%3E%3Cg fill=none fill-rule=evenodd%3E%3Cg fill=%23ffffff%3E%3Ccircle cx=30 cy=30 r=1.5 fill-opacity=0.08/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy-800 via-navy-900 to-navy-950 py-20 md:py-28">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=60 height=60 viewBox=0 0 60 60 xmlns=http://www.w3.org/2000/svg%3E%3Cg fill=none fill-rule=evenodd%3E%3Cg fill=%23ffffff%3E%3Ccircle cx=30 cy=30 r=1.5 fill-opacity=0.06/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]" />
+        {/* Cyan glow accent */}
+        <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
         <div className="relative mx-auto max-w-4xl px-4 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-sm text-white/90 backdrop-blur-sm">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm text-white/90 backdrop-blur-sm border border-white/10">
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             เปิดให้บริการแล้ว · ฟรีในช่วงเปิดตัว
           </div>
 
           <h1 className="text-4xl font-bold text-white md:text-5xl lg:text-6xl leading-tight">
             รับจองออนไลน์<br />
-            <span className="text-brand-200">ง่ายกว่าที่เคย</span>
+            <span className="text-cyan-400">ง่ายกว่าที่เคย</span>
           </h1>
-          <p className="mt-5 text-lg text-white/80 max-w-xl mx-auto leading-relaxed">
+          <p className="mt-5 text-lg text-white/70 max-w-xl mx-auto leading-relaxed">
             ระบบจองนัดสำหรับธุรกิจบริการ เปิดร้านฟรี ได้ลิงก์และ QR ทันที
             ลูกค้าจองเองได้ตลอด 24 ชั่วโมง
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link href="/merchant/onboarding">
-              <Button size="xl" className="bg-white text-brand-700 hover:bg-brand-50 shadow-lg w-full sm:w-auto">
+              <Button size="xl" className="bg-cyan-400 text-navy-900 hover:bg-cyan-300 font-bold shadow-lg shadow-cyan-500/20 w-full sm:w-auto">
                 เปิดร้านฟรีเลย
                 <ChevronRight className="h-4 w-4" />
               </Button>
             </Link>
             <Link href="/bloom-salon">
-              <Button size="xl" variant="outline" className="border-white/30 text-white hover:bg-white/10 w-full sm:w-auto">
+              <Button size="xl" variant="outline" className="border-white/20 text-white hover:bg-white/10 hover:border-white/30 w-full sm:w-auto">
                 ดูตัวอย่างร้าน
               </Button>
             </Link>
           </div>
 
-          <p className="mt-4 text-sm text-white/60">ไม่ต้องใช้บัตรเครดิต · ตั้งค่าเสร็จใน 5 นาที</p>
+          <p className="mt-4 text-sm text-white/40">ไม่ต้องใช้บัตรเครดิต · ตั้งค่าเสร็จใน 5 นาที</p>
         </div>
       </section>
 
@@ -121,15 +123,15 @@ export default function HomePage() {
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">เริ่มต้นง่ายมาก</h2>
+            <h2 className="text-2xl font-bold text-navy-900 md:text-3xl">เริ่มต้นง่ายมาก</h2>
             <p className="mt-2 text-gray-500">ไม่ต้องมีความรู้เทคนิค ทำได้เองในไม่กี่นาที</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map(({ step, title, desc }) => (
               <div key={step} className="text-center">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50">
-                  <span className="text-xl font-bold text-brand-600">{step}</span>
+                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-navy-50">
+                  <span className="text-xl font-bold text-navy-700">{step}</span>
                 </div>
                 <h3 className="font-semibold text-gray-900">{title}</h3>
                 <p className="mt-1.5 text-sm text-gray-500 leading-relaxed">{desc}</p>
@@ -143,14 +145,14 @@ export default function HomePage() {
       <section className="bg-gray-50 py-16 md:py-20">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">ทุกอย่างที่ธุรกิจบริการต้องการ</h2>
+            <h2 className="text-2xl font-bold text-navy-900 md:text-3xl">ทุกอย่างที่ธุรกิจบริการต้องการ</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="rounded-2xl bg-white border border-gray-100 p-6">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50">
-                  <Icon className="h-5 w-5 text-brand-600" />
+              <div key={title} className="rounded-2xl bg-white border border-gray-100 p-6 hover:border-cyan-200 hover:shadow-sm transition-all">
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-navy-50">
+                  <Icon className="h-5 w-5 text-navy-700" />
                 </div>
                 <h3 className="font-semibold text-gray-900">{title}</h3>
                 <p className="mt-1.5 text-sm text-gray-500 leading-relaxed">{desc}</p>
@@ -163,11 +165,11 @@ export default function HomePage() {
       {/* Pricing */}
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-lg px-4 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">ราคาโปร่งใส ไม่มีค่าซ่อน</h2>
+          <h2 className="text-2xl font-bold text-navy-900 md:text-3xl">ราคาโปร่งใส ไม่มีค่าซ่อน</h2>
           <p className="mt-2 text-gray-500">จ่ายเฉพาะเมื่อธุรกิจคุณเติบโต</p>
 
           <div className="mt-8 rounded-2xl border border-gray-100 bg-white p-8 shadow-sm">
-            <div className="text-5xl font-bold text-gray-900">3.9%</div>
+            <div className="text-5xl font-bold text-navy-900">3.9%</div>
             <div className="mt-1 text-gray-500 text-sm">ต่อการจองที่สำเร็จ</div>
 
             <ul className="mt-6 space-y-3 text-left">
@@ -180,21 +182,21 @@ export default function HomePage() {
             </ul>
 
             <Link href="/merchant/onboarding" className="mt-6 block">
-              <Button size="lg" className="w-full">เปิดร้านฟรีเลย</Button>
+              <Button size="lg" className="w-full bg-navy-800 hover:bg-navy-900 text-white">เปิดร้านฟรีเลย</Button>
             </Link>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-brand-600 py-16">
+      <section className="bg-navy-900 py-16">
         <div className="mx-auto max-w-2xl px-4 text-center">
           <h2 className="text-2xl font-bold text-white md:text-3xl">
             พร้อมรับจองออนไลน์แล้วหรือยัง?
           </h2>
-          <p className="mt-3 text-brand-200">เปิดร้านวันนี้ ได้ลิงก์จองทันที ฟรี ไม่มีเงื่อนไข</p>
+          <p className="mt-3 text-cyan-300/80">เปิดร้านวันนี้ ได้ลิงก์จองทันที ฟรี ไม่มีเงื่อนไข</p>
           <Link href="/merchant/onboarding" className="mt-6 inline-block">
-            <Button size="xl" className="bg-white text-brand-700 hover:bg-brand-50 shadow-lg">
+            <Button size="xl" className="bg-cyan-400 text-navy-900 hover:bg-cyan-300 font-bold shadow-lg shadow-cyan-500/20">
               เริ่มเลย — ฟรี
               <ChevronRight className="h-4 w-4" />
             </Button>
@@ -209,7 +211,7 @@ export default function HomePage() {
             <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-navy-800">
               <span className="text-xs font-bold text-cyan-400">B</span>
             </div>
-            <span className="font-bold">
+            <span className="text-lg font-bold">
               <span className="text-navy-800">Book</span>
               <span className="text-cyan-500">Ease</span>
             </span>
