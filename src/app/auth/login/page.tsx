@@ -7,7 +7,7 @@ import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
-import { APP_NAME } from "@/lib/constants";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 import { Phone } from "lucide-react";
 
 export default function LoginPage() {
@@ -90,15 +90,9 @@ export default function LoginPage() {
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy-800 border border-cyan-500/30">
-              <span className="text-lg font-bold text-cyan-400">B</span>
-            </div>
-            <span className="text-xl font-bold">
-              <span className="text-white">Book</span>
-              <span className="text-cyan-400">Ease</span>
-            </span>
-          </Link>
+          <div className="inline-flex rounded-2xl bg-white px-4 py-3 shadow-lg shadow-black/10">
+            <BrandLogo withLink size="sm" />
+          </div>
           <h1 className="mt-6 text-2xl font-bold text-white">เข้าสู่ระบบ</h1>
           <p className="mt-1 text-sm text-white/50">สำหรับเจ้าของร้านและพนักงาน</p>
         </div>

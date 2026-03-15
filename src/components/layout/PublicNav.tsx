@@ -1,26 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { APP_NAME } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
-import { usePathname } from "next/navigation";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 
 export function PublicNav() {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
-
   return (
     <header className="sticky top-0 z-40 border-b border-gray-100 bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-navy-800">
-            <span className="text-sm font-bold text-cyan-400">B</span>
-          </div>
-          <span className="text-lg font-bold">
-            <span className="text-navy-800">Book</span>
-            <span className="text-cyan-500">Ease</span>
-          </span>
-        </Link>
+        <BrandLogo withLink size="sm" />
 
         <div className="flex items-center gap-2">
           <Link href="/auth/login">

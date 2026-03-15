@@ -22,7 +22,7 @@ function QRCodeDisplay({ url, size = 200 }: { url: string; size?: number }) {
       QRCode.toCanvas(canvasRef.current, url, {
         width: size,
         margin: 2,
-        color: { dark: "#1e1b4b", light: "#ffffff" },
+        color: { dark: "#1a2f6e", light: "#ffffff" },
       });
       setLoaded(true);
     });

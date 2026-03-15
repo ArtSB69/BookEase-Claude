@@ -13,9 +13,9 @@ import {
   X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { APP_NAME } from "@/lib/constants";
 import { useState } from "react";
 import { signOut } from "next-auth/react";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 
 const navItems = [
   { href: "/merchant/dashboard", label: "ภาพรวม", icon: LayoutDashboard },
@@ -33,14 +33,8 @@ export function MerchantNav() {
     <>
       {/* Desktop sidebar */}
       <aside className="hidden lg:flex lg:w-60 lg:flex-col lg:fixed lg:inset-y-0 lg:z-30 lg:border-r lg:border-gray-100 lg:bg-white">
-        <div className="flex h-16 items-center gap-2 border-b border-gray-100 px-5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-navy-800">
-            <span className="text-sm font-bold text-cyan-400">B</span>
-          </div>
-          <span className="text-lg font-bold">
-            <span className="text-navy-800">Book</span>
-            <span className="text-cyan-500">Ease</span>
-          </span>
+        <div className="flex h-16 items-center border-b border-gray-100 px-5">
+          <BrandLogo withLink size="sm" />
         </div>
         <nav className="flex flex-1 flex-col gap-1 p-3 pt-4">
           {navItems.map(({ href, label, icon: Icon }) => (
@@ -72,15 +66,7 @@ export function MerchantNav() {
 
       {/* Mobile top nav */}
       <header className="lg:hidden sticky top-0 z-40 flex h-16 items-center justify-between border-b border-gray-100 bg-white px-4">
-        <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-navy-800">
-            <span className="text-sm font-bold text-cyan-400">B</span>
-          </div>
-          <span className="text-lg font-bold">
-            <span className="text-navy-800">Book</span>
-            <span className="text-cyan-500">Ease</span>
-          </span>
-        </div>
+        <BrandLogo withLink size="sm" />
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="rounded-lg p-2 text-gray-500 hover:bg-gray-100"

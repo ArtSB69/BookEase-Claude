@@ -58,7 +58,7 @@ export default async function StorefrontPage(props: any) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Cover image */}
-      <div className="relative h-52 sm:h-64 md:h-72 bg-gradient-to-br from-brand-400 to-indigo-600">
+      <div className="relative h-52 sm:h-64 md:h-72 bg-gradient-to-br from-navy-700 via-navy-800 to-cyan-500">
         {merchant.coverImageUrl && (
           <Image
             src={merchant.coverImageUrl}

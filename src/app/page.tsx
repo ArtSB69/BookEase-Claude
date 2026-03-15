@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PublicNav } from "@/components/layout/PublicNav";
 import { Button } from "@/components/ui/button";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 import {
   CalendarCheck,
   QrCode,
@@ -207,15 +208,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="border-t border-gray-100 bg-white py-8">
         <div className="mx-auto max-w-5xl px-4 text-center">
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-navy-800">
-              <span className="text-xs font-bold text-cyan-400">B</span>
-            </div>
-            <span className="text-lg font-bold">
-              <span className="text-navy-800">Book</span>
-              <span className="text-cyan-500">Ease</span>
-            </span>
-          </div>
+          <BrandLogo withLink size="sm" />
           <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} BookEase by Atiz · ระบบรับจองสำหรับธุรกิจบริการในไทย
           </p>

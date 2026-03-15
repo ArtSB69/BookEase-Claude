@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Spinner } from "@/components/ui/spinner";
-import { APP_NAME, BUSINESS_TYPES } from "@/lib/constants";
+import { BUSINESS_TYPES } from "@/lib/constants";
+import { BrandLogo } from "@/components/brand/BrandLogo";
 import { CheckCircle2, Plus, Trash2, ArrowLeft, Phone } from "lucide-react";
 
 type Step = "phone" | "otp" | "shop" | "services" | "publish";
@@ -217,15 +218,7 @@ export default function OnboardingPage() {
                 <ArrowLeft className="h-5 w-5" />
               </button>
             )}
-            <div className="flex items-center gap-2">
-              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-navy-800">
-                <span className="text-xs font-bold text-cyan-400">B</span>
-              </div>
-              <span className="text-sm font-bold">
-                <span className="text-navy-800">Book</span>
-                <span className="text-cyan-500">Ease</span>
-              </span>
-            </div>
+            <BrandLogo withLink size="sm" />
           </div>
 
           {step !== "publish" && (
