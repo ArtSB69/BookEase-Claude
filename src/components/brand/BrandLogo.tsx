@@ -16,9 +16,14 @@ interface BrandLogoProps {
   size?: BrandLogoSize;
   withLink?: boolean;
   href?: string;
+  inverted?: boolean;
 }
 
-function BrandLogoWordmark({ className, size = "md" }: Omit<BrandLogoProps, "withLink" | "href">) {
+function BrandLogoWordmark({
+  className,
+  size = "md",
+  inverted = false,
+}: Omit<BrandLogoProps, "withLink" | "href">) {
   return (
     <span
       className={cn(
@@ -28,14 +33,20 @@ function BrandLogoWordmark({ className, size = "md" }: Omit<BrandLogoProps, "wit
       )}
       aria-label="BookEase"
     >
-      <span className="text-navy-800">Book</span>
-      <span className="text-cyan-500">Ease</span>
+      <span className={inverted ? "text-white" : "text-navy-800"}>Book</span>
+      <span className={inverted ? "text-cyan-300" : "text-cyan-500"}>Ease</span>
     </span>
   );
 }
 
-export function BrandLogo({ className, size = "md", withLink = false, href = "/" }: BrandLogoProps) {
-  const logo = <BrandLogoWordmark className={className} size={size} />;
+export function BrandLogo({
+  className,
+  size = "md",
+  withLink = false,
+  href = "/",
+  inverted = false,
+}: BrandLogoProps) {
+  const logo = <BrandLogoWordmark className={className} size={size} inverted={inverted} />;
 
   if (!withLink) return logo;
 
