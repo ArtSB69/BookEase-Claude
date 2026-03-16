@@ -4,6 +4,17 @@ import type { NextRequest } from "next/server";
 
 export default auth((req) => {
   const { pathname } = req.nextUrl;
+  const hostname = req.headers.get("host") ?? "";
+
+  // Route shop.bookease.co subdomain to /shop
+  const isShopSubdomain =
+    hostname === "shop.bookease.co" ||
+    hostname.startsWith("shop.bookease.co:") ||
+    hostname === "shop.localhost" ||
+    hostname.startsWith("shop.localhost:");
+  if (isShopSubdomain && pathname === "/") {
+    return NextResponse.rewrite(new URL("/shop", req.url));
+  }
 
   // Protect merchant routes
   if (pathname.startsWith("/merchant/") && pathname !== "/merchant/onboarding") {
@@ -19,6 +30,7 @@ export default auth((req) => {
 
 export const config = {
   matcher: [
+    "/",
     "/merchant/:path*",
     "/account/:path*",
   ],
